@@ -1,27 +1,35 @@
-Once the base image is created (build-image.sh), create the
-container by running
+Build the base image:
+
+build-image.sh
+
+If youhave modified the Docker file and want to build a new
+image whilekeeping the old onearound, you can give it a tag
+by specifying it as an argument:
+
+build-image.sh  mar18build
 
 create-container.sh
 
-which will produce a container with the name 'puppet'.  If you
-want it to have a different name i.e. puppet-blah, you can run
+which will produce a container with the name 'puppet' by default.
+If you specified a tag name in the build stage, you can pass that
+as an argument:
 
 create-container.sh blah
 
 To stop the container,
 
 stop-container.sh
-or if you gave it a suffix,
+or if you gave the image a tag name,
 stop-container.sh blah
 
 To restart the container,
 start-container.sh
-or if you gave it a suffix,
+or if you gave the image a tag name,
 start-container.sh blah
 
 To ssh to the container,
 ssh-to-instance.sh
-or if you gave it a suffix,
+or if you gave the image a tag name,
 ssh-to-instance.sh blah
 
 
