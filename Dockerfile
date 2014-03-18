@@ -73,7 +73,7 @@ RUN HOSTNAME=`/bin/hostname` echo  '\n\n[agent]\nserver = '"$HOSTNAME"'\n' >> /e
 RUN mkdir -p /var/lib/git/operations/private ; ln -s /var/lib/git/operations/private /etc/puppet/private ; \
     mkdir -p /etc/puppet/private/modules /etc/puppet/private/manifests /etc/puppet/private/files /etc/puppet/private/templates
 
-ADD README.container /root
+ADD README.container /root/
 
 EXPOSE 22
 
