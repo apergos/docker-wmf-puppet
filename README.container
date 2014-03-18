@@ -1,0 +1,38 @@
+Once the base image is created (build-image.sh), create the
+container by running
+
+create-container.sh
+
+which will produce a container with the name 'puppet'.  If you
+want it to have a different name i.e. puppet-blah, you can run
+
+create-container.sh blah
+
+To stop the container,
+
+stop-container.sh
+or if you gave it a suffix,
+stop-container.sh blah
+
+To restart the container,
+start-container.sh
+or if you gave it a suffix,
+start-container.sh blah
+
+To ssh to the container,
+ssh-to-instance.sh
+or if you gave it a suffix,
+ssh-to-instance.sh blah
+
+
+Once the container is created and running you should:
+
+- edit /etc/puppet/manifests/site.pp and update the stub
+  node stanza with the container id
+
+- change the hostname for [agent] in /etc/puppet/puppet.conf
+  to the container id
+
+- run /etc/init.d/puppetmaster start
+
+- have fun testing!
